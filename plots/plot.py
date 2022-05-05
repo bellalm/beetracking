@@ -230,8 +230,8 @@ def plot_detections(fr, save, fps=10):
 def plot_detection_video(fps=10):
     if not os.path.exists(PLOTS_DIR):
         os.mkdir(PLOTS_DIR)
-
-    imgs = [ plot_detections(fr, False, fps) for fr in range(FR1, FR2) ]
+    listFrames = os.listdir(IMG_DIR)
+    imgs = [ plot_detections(fr, False, fps) for fr in range(FR1, len(listFrames)) ]
 
     movie_file = os.path.join(PLOTS_DIR, "detections.gif")
     imgs[0].save(movie_file, save_all=True, append_images=imgs[1:], duration=1000//fps, loop=0)
