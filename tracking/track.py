@@ -8,7 +8,10 @@ from utils.func import EMB_SIZE, SQ, FR_D
 LAST_N = 10
 VIS_CUT = 1.75
 DDIV = 30
-FR1, FR2, LOOK_BACK_BASE, LEN_MIN = 0, 100, 10, 10
+import os
+from utils.paths import IMG_DIR
+FR1, FR2 = 0, len(os.listdir(IMG_DIR))
+LOOK_BACK_BASE, LEN_MIN = 10, 10
 
 ###############################################
 

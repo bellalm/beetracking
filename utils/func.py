@@ -11,7 +11,10 @@ MOVING_AVERAGE_DECAY = 0.9999
 DT = 80
 SQ = DT // 2
 EMB_SIZE = 64
-FR1, FR2 = 0, 100
+
+import os
+from utils.paths import IMG_DIR
+FR1, FR2 = 0, len(os.listdir(IMG_DIR))
 
 GPU_NAME = 'tower'
 DS = 256
